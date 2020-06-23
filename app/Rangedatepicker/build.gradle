@@ -1,0 +1,9 @@
+
+dependencies {
+    
+
+    implementation project(path: ':rangedatepicker')
+    implementation 'com.android.support:recyclerview-v7:29.0.0'
+
+
+}
