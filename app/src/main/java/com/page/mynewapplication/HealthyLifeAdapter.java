@@ -5,6 +5,7 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,7 +24,8 @@ import butterknife.ButterKnife;
 public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.HealthyViewHolder> {
     ArrayList<HealthModel> healthModelList;
     private Context ctx;
-
+    @BindView(R.id.healthImage)
+    ImageView healthimageView;
     public HealthyLifeAdapter(Context context,ArrayList<HealthModel> healthModelList) {
         ctx = context;
         this.healthModelList = healthModelList;
@@ -43,6 +45,7 @@ public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.
         holder.descriptiontextView.setText(holder.selectHealth.getHealthdescription());
         //holder.healthimageView.setImageResource(holder.selectHealth.getHealthimage());
         try {
+
            // String[] imges = ctx.getAssets().list("images");
 //            String[] images =ctx.getAssets().list("images");
 //            ArrayList<String> listimages = new ArrayList<String>(Arrays.asList(images));
@@ -50,8 +53,6 @@ public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.
 //            Drawable drawable = Drawable.createFromStream(ctx.getAssets().open("images"+listimages.get(position)), null);
 //           // Drawable drawable = Drawable.createFromStream(inputStream,null);
 //            holder.healthimageView.setImageDrawable(drawable);
-
-
 
             String[] images =ctx.getAssets().list("images");
             ArrayList<String> listImages = new ArrayList<String>(Arrays.asList(images));
