@@ -24,8 +24,6 @@ import butterknife.ButterKnife;
 public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.HealthyViewHolder> {
     ArrayList<HealthModel> healthModelList;
     private Context ctx;
-    @BindView(R.id.healthImage)
-    ImageView healthimageView;
     public HealthyLifeAdapter(Context context,ArrayList<HealthModel> healthModelList) {
         ctx = context;
         this.healthModelList = healthModelList;
