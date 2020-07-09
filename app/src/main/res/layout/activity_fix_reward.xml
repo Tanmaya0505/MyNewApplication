@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FixRewardActivity">
+    tools:context=".activity.FlexiRewards">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -22,11 +21,9 @@
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar"
         android:fillViewport="true">
-
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView1"
                 android:layout_width="match_parent"
@@ -60,6 +57,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:text="Point History"
                         android:textSize="20dp"
                         android:textColor="#4E4D4E"
@@ -68,7 +66,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
                         android:layout_marginLeft="140dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         android:text="View Summary"
                         android:background="@drawable/orange_button_round_corner_shape_normal"
                         android:textSize="9dp"
@@ -255,6 +254,59 @@
                     android:textSize="8dp"
                     android:textColor="#FFF" />
             </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardView6"
+                android:background="@drawable/rounded_button_more_transparent"
+                tools:ignore="MissingConstraints"
+                android:elevation="5dp"
+                android:layout_marginRight="10dp"
+                android:layout_margin="2dp">
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:foregroundGravity="center"
+                    android:src="@drawable/horlicks_img" />
+                <RelativeLayout
+                    android:id="@+id/container3"
+                    android:layout_width="230dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/image3">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:maxLines="3"
+                        android:text="ORAL B CLASSIC CARE TOOTHBRUSH TWO PACK"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLines="3"
+                        android:layout_marginTop="40dp"
+                        android:text="Pts 30  .  Rs 70.00" />
+                </RelativeLayout>
+                <Button
+                    android:layout_width="70dp"
+                    android:layout_height="30dp"
+                    android:layout_toRightOf="@+id/container3"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/orange_button_round_corner_shape_normal"
+                    android:text="Add to Cart"
+                    android:textSize="8dp"
+                    android:textColor="#FFF" />
+            </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>
+
