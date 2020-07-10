@@ -60,7 +60,6 @@ public class Healthy_life extends AppCompatActivity {
         HealthModel movie = new HealthModel("Top 7 cancer causing food", "A lysosome is a membrane-bound cell organelle that contains digestive enzymes. Lysosomes are involved with various cell processes.");
         healthdata.add(movie);
 
-
 //        String[] images =context.getAssets().list("images");
 //        ArrayList<String> listimages = new ArrayList<String>(Arrays.asList(images));
 //        //listimages.add(listimages);

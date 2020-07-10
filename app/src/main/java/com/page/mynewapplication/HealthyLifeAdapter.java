@@ -1,6 +1,9 @@
 package com.page.mynewapplication;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +27,7 @@ import butterknife.ButterKnife;
 public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.HealthyViewHolder> {
     ArrayList<HealthModel> healthModelList;
     private Context ctx;
+    private AssetManager assetManager;
     public HealthyLifeAdapter(Context context,ArrayList<HealthModel> healthModelList) {
         ctx = context;
         this.healthModelList = healthModelList;
@@ -31,9 +35,10 @@ public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.
     @NonNull
     @Override
     public HealthyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-          View V = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_health_model,parent,false);
+        View V = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.activity_health_model, parent, false);
+        HealthyViewHolder vh = new HealthyViewHolder(V);
 
-          HealthyViewHolder vh = new HealthyViewHolder(V);
         return vh;
     }
     @Override
@@ -54,10 +59,20 @@ public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.
 
             String[] images =ctx.getAssets().list("images");
             ArrayList<String> listImages = new ArrayList<String>(Arrays.asList(images));
+//            for (int i=0; i<images.length; i++){
+//                InputStream inputstream=ctx.getAssets().open("images/"
+//                        +images[i]);
+//                Bitmap bitmap = BitmapFactory.decodeStream(inputstream);
+//                holder.healthimageView.setImageBitmap(bitmap);
+//            }
             InputStream inputstream=ctx.getAssets().open("images/"
                     +listImages.get(position));
+            //Bitmap bitmap = BitmapFactory.decodeStream(inputstream);
+
+           // holder.imageView.setImageBitmap(bitmap);
+
             Drawable drawable = Drawable.createFromStream(inputstream, null);
-            holder.healthimageView.setImageDrawable(drawable);
+            holder.imageView.setImageDrawable(drawable);
 
         }catch (Exception e){}
 
@@ -69,7 +84,7 @@ public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.
 
     public class HealthyViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.healthImage)
-        ImageView healthimageView;
+        ImageView imageView;
         @BindView(R.id.healthTitle)
         TextView healthtextView;
         @BindView(R.id.healthDescription)
@@ -80,6 +95,7 @@ public class HealthyLifeAdapter extends RecyclerView.Adapter<HealthyLifeAdapter.
             ButterKnife.bind(this,itemView);
             healthtextView = itemView.findViewById(R.id.healthTitle);
             descriptiontextView = itemView.findViewById(R.id.healthDescription);
+            imageView = itemView.findViewById(R.id.healthImage);
         }
     }
 }
