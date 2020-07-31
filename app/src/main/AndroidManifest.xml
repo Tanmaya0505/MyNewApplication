@@ -12,12 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FixRewardActivity"></activity>
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <activity android:name=".PdfActivity" />
+        <activity android:name=".Healthy_life" />
+        <activity android:name=".FixRewardActivity" />
         <activity android:name=".ClientVisitsActivity" />
         <activity android:name=".SingleViewActivity" />
         <activity android:name=".PhotoActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Healthy_life">
+        <activity android:name=".Firebase_textActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
